@@ -1,4 +1,5 @@
 var express = require('express'),
+    path = require('path'),
     config = require('./server/configure'),
     app = express();
 
