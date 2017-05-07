@@ -1,6 +1,7 @@
 var express = require('express'),
     path = require('path'),
     config = require('./server/configure'),
+    mongoose = require('mongoose'),
     app = express();
 
 // Port setup
@@ -11,6 +12,13 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Configure app instance
 app = config(app);
+
+// Fix mongoose deprecation warning
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/imgPloadr');
+mongoose.connection.on('open', function(){
+  console.log('Mongoose connected');
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

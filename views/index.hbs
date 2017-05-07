@@ -7,9 +7,9 @@
     <form method="post" action="/images" enctype="multipart/form-data">
         <div class="panel-body form-horizontal">
             <div class="form-group col-md-12">
-                <label class="col-sm-2 control-label" for="file">Browse:</label>
+                <label class="col-sm-2 control-label" for="image">Browse:</label>
                 <div class="col-md-10">
-                    <input class="form-control" type="file" name="file">
+                    <input class="form-control" type="file" name="image">
                 </div>
             </div>
             <div class="form-group col-md-12">
@@ -44,7 +44,7 @@
         {{#each images}}
             <div class="col-md-4 text-center" style="padding-bottom: 1em;">
                 <a href="/images/{{ uniqueId }}">
-                    <img src="/public/upload/{{ filename }}" alt="{{ title }}" style="width: 175px; height: 175px;"  class="img-thumbnail">
+                    <img src="/public/uploads/{{ filename }}" alt="{{ title }}" style="width: 175px; height: 175px;"  class="img-thumbnail">
                 </a>
             </div>
         {{/each}}
